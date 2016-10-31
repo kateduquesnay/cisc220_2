@@ -9,13 +9,13 @@
 
 
 #only loop within these ip addresses
-for ip in seq 130.15.0.0 130.15.255.255
+for ip in 130.15.{0..255}.{0..255}
 do 
 
 #Get subdomain names within these ip restrictions
-subDomains = nslookup <$ip>
+subDomains = nslookup $ip
 
-
+#Print into 2 columns
 printf "%-20s | %-20s" "$ip" "$subDomains"
 
 

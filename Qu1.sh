@@ -6,3 +6,14 @@
 # git clone https://github.com/kateduquesnay/cisc220_2.git cisc220_2
 
 #Question 1
+#!/bin/bash
+processesTree(i)
+#Print Tree of all active processes until init daemon is reached
+for i processesTree(i); do  
+#use ps command
+#Recursive function to display each child 
+  if process A pid == process B ppid then
+  ps axo comm,pid,ppid,start,user | grep -9 -e ((PID=i) == (PPID=i));
+  processesTree(i+1);
+#parse output to output in assignment
+

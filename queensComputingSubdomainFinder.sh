@@ -7,17 +7,18 @@
 
 #Question 4
 
-#Loop through ips from 0.0 to 255.255
 
-#only perform 
+#only loop within these ip addresses
 while ip in seq 130.15.0.0 130.15.255.255
 do 
 
+
 for i in $#
 do
-#Get domain names within these ip restrictions
-donslookup <$ip>
-#strip sundomains from this list
+#Get subdomain names within these ip restrictions
+subDomains = nslookup <$ip>
+
+printf "%-20s | %-20s" "ip" "subDomains"
 
 
 done #end for

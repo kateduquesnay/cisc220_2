@@ -7,4 +7,11 @@
 
 #Question 4
 
+#Loop through ips from 00 to 255.255
+
+for ip in 130.15.{32..47}.{0..255}
+do
+        echo 130.15.{00..00}.{255..255} | grep -q "\<$ip\>" && continue
+        echo "<ip>${ip}</ip>" 
+done
 

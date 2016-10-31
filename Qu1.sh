@@ -7,13 +7,16 @@
 
 #Question 1
 #!/bin/bash
-processesTree(i)
+processesTree(i, tree)
 #Print Tree of all active processes until init daemon is reached
 for i processesTree(i); do  
 #use ps command
 #Recursive function to display each child 
   if process A pid == process B ppid then
-  ps axo comm,pid,ppid,start,user | grep -9 -e ((PID=i) == (PPID=i));
-  processesTree(i+1);
+  ps axo comm,pid,ppid,start,user | grep -9 -e (PID=i) == (PPID=i);
+  tree=pstree i;
+  processesTree(i+1, tree);
+  fi
+done
 #parse output to output in assignment
 

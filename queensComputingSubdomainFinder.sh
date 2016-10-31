@@ -9,6 +9,7 @@
 
 
 #only loop within these ip addresses
+printf "%-20s | %-20s" "Ip Address" "Sub-Domain"
 for ip in 130.15.{0..255}.{0..255}
 do 
 

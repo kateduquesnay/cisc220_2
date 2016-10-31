@@ -9,9 +9,9 @@
 
 #Loop through ips from 00 to 255.255
 
-for ip in 130.15.{32..47}.{0..255}
+for ip in seq 130.15.0.0 130.15.255.255
 do
-        echo 130.15.{00..00}.{255..255} | grep -q "\<$ip\>" && continue
-        echo "<ip>${ip}</ip>" 
+        echo $ip
+        #print all subdomain names with ips
 done
 

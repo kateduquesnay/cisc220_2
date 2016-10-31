@@ -7,9 +7,10 @@
 
 #Question 4
 
-
-#only loop within these ip addresses
+#outside the loop: titles for the ip/subdomain columns
 printf "%-20s | %-20s" "Ip Address" "Sub-Domain"
+
+#only execute within these addresses
 for ip in 130.15.{0..255}.{0..255}
 do 
 

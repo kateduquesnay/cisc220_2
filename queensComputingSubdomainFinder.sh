@@ -9,16 +9,20 @@
 
 #Loop through ips from 0.0 to 255.255
 
+#only perform 
 while ip in seq 130.15.0.0 130.15.255.255
 do 
 
 for i in $#
 do
-donslookup <ip>
+#Get domain names within these ip restrictions
+donslookup <$ip>
+#strip sundomains from this list
+
 
 done #end for
-#get domain names within these restrictions
 
 
-done
+
+done #end while
 

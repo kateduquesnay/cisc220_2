@@ -9,33 +9,35 @@
 
 
 #repositoryBackup.sh
-#read 
+#cron job: 00 1 * * * git clone https://github.com/kateduquesnay/cisc220_2 cisc220_2
 
-
-#cron job:
-
-#in loop?
-crontab -e
-00 1 * * * git clone https://github.com/kateduquesnay/cisc220_2 Assignment 2
-#name the file based on the date: backupYYMMDDHH.tgz
-
-#import the path to the repository folder: 
-#
 #import the github URL:
-#read https://github.com/kateduquesnay/cisc220_2 ??
+echo "type the url of your repository: "
+read $urll
+#chose the folder to be edited
+echo "type the name of your local folder: "
+read $folder
 #import git username and password 
+git config --global user.name
+git config --global user.email
 
 #create a date and time variable based on when the cron job runs??? for naming??
+#name the file based on the date: backupYYMMDDHH.tgz
+now=$(date +"%y%m%d%h")
+#run crontab
+crontab -e
+00 1 * * * git clone $urll $folder
+#create file from local repository
+cd $folder 
+git add backup$now.tgz
+echo "Backup backup$now.tgz created successfully!"
+#commit backup to local repository
+git commit -m 'my first commit'
+echo "Backup backup$now.tgz committed to the local git repository"
+#Check-in (push) your local copy of the backup file to rremote repository
+git pull
+git push origin master
+echo "Backup backup$now.tgz pushed to the remote git repository $folder"
 
-#Commit the new backup file to the local git repository 
-  #git clone "https://github.com/kateduquesnay/cisc220_2"
-  #cd git-backup
-#Push the new backup file to your remote git repository 
-git push https://AdeleMcCallum:jenny1234@github.com/repoURL.git --all
-  
 
-#output redirected to the backupsLog file
-#echo Backup (backupYYYYMMDDHH.tgz) created successfully!
-#echo Backup (backupYYYYMMDDHH.tgz) committed to the local git repository
-#echo Backup (backupYYYYMMDDHH.tgz) pushed to the remote git repository cisc220_2
 
